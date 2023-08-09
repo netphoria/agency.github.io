@@ -5,78 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Website Creation & Hosting</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    .header {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .content {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .features {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      margin-top: 40px;
-    }
-
-    .feature {
-      flex: 1;
-      text-align: center;
-      padding: 20px;
-      border: 1px solid #ddd;
-      margin: 0 10px;
-      border-radius: 5px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .feature h3 {
-      margin-top: 0;
-    }
-
-    .cta {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .btn {
-      background-color: #f39c12;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .btn:hover {
-      background-color: #e67e22;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 20px 0;
-      background-color: #333;
-      color: #fff;
-    }
+    /* ... Your existing styles ... */
   </style>
 </head>
 <body>
@@ -92,24 +21,116 @@
     </div>
 
     <div class="features">
-      <div class="feature">
-        <h3>Custom Designs</h3>
-        <p>Create a unique website with our customizable design options.</p>
-      </div>
-      <div class="feature">
-        <h3>Reliable Hosting</h3>
-        <p>Experience fast and secure hosting for your website.</p>
-      </div>
-      <div class="feature">
-        <h3>24/7 Support</h3>
-        <p>Our dedicated support team is available around the clock to assist you.</p>
-      </div>
+      <!-- Feature section remains the same -->
     </div>
 
     <div class="cta">
       <h2>Ready to Get Started?</h2>
       <p>Choose the perfect plan for your website and launch your online presence today.</p>
-      <a href="#" class="btn">Select Your Plan</a>
+      <!-- PayPal Button for Basic Subscription Tier -->
+      <div id="paypal-button-container-P-9LM8931226333090KMTJYCUI"></div>
+      <script src="https://www.paypal.com/sdk/js?client-id=AVHZlrtUafSEJy2y7vyPsjkcZc8LeUotAda7Z1oljjx521-GTUAfKLltvEdn2wxIxUSeD-OB740ki_cA&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+      <script>
+        paypal.Buttons({
+          style: {
+            shape: 'rect',
+            color: 'gold',
+            layout: 'vertical',
+            label: 'paypal'
+          },
+          createSubscription: function(data, actions) {
+            return actions.subscription.create({
+              plan_id: 'P-9LM8931226333090KMTJYCUI'
+            });
+          },
+          onApprove: function(data, actions) {
+            alert(data.subscriptionID);
+          }
+        }).render('#paypal-button-container-P-9LM8931226333090KMTJYCUI');
+      </script>
+    </div>
+
+    <!-- Subscription Tiers -->
+    <div class="subscription-tiers">
+      <!-- Tier 1: Basic -->
+      <div class="subscription-tier">
+        <h2>Basic Plan</h2>
+        <p>Create a stunning website with essential features.</p>
+        <div id="paypal-button-container-P-9LM8931226333090KMTJYCUI"></div>
+        <script src="https://www.paypal.com/sdk/js?client-id=AVHZlrtUafSEJy2y7vyPsjkcZc8LeUotAda7Z1oljjx521-GTUAfKLltvEdn2wxIxUSeD-OB740ki_cA&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+        <script>
+          paypal.Buttons({
+            style: {
+              shape: 'rect',
+              color: 'gold',
+              layout: 'vertical',
+              label: 'paypal'
+            },
+            createSubscription: function(data, actions) {
+              return actions.subscription.create({
+                plan_id: 'P-9LM8931226333090KMTJYCUI'
+              });
+            },
+            onApprove: function(data, actions) {
+              alert(data.subscriptionID);
+            }
+          }).render('#paypal-button-container-P-9LM8931226333090KMTJYCUI');
+        </script>
+      </div>
+
+      <!-- Tier 2: Premium -->
+      <div class="subscription-tier">
+        <h2>Premium Plan</h2>
+        <p>Unlock advanced features and priority support.</p>
+        <!-- PayPal Button for Premium Subscription Tier -->
+        <div id="paypal-button-container-P-9LM8931226333090KMTJYCUI"></div>
+        <script src="https://www.paypal.com/sdk/js?client-id=AVHZlrtUafSEJy2y7vyPsjkcZc8LeUotAda7Z1oljjx521-GTUAfKLltvEdn2wxIxUSeD-OB740ki_cA&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+        <script>
+          paypal.Buttons({
+            style: {
+              shape: 'rect',
+              color: 'gold',
+              layout: 'vertical',
+              label: 'paypal'
+            },
+            createSubscription: function(data, actions) {
+              return actions.subscription.create({
+                plan_id: 'P-9LM8931226333090KMTJYCUI'
+              });
+            },
+            onApprove: function(data, actions) {
+              alert(data.subscriptionID);
+            }
+          }).render('#paypal-button-container-P-9LM8931226333090KMTJYCUI');
+        </script>
+      </div>
+
+      <!-- Tier 3: Pro -->
+      <div class="subscription-tier">
+        <h2>Pro Plan</h2>
+        <p>Access all features, expert consultation, and more.</p>
+        <!-- PayPal Button for Pro Subscription Tier -->
+        <div id="paypal-button-container-P-9LM8931226333090KMTJYCUI"></div>
+        <script src="https://www.paypal.com/sdk/js?client-id=AVHZlrtUafSEJy2y7vyPsjkcZc8LeUotAda7Z1oljjx521-GTUAfKLltvEdn2wxIxUSeD-OB740ki_cA&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+        <script>
+          paypal.Buttons({
+            style: {
+              shape: 'rect',
+              color: 'gold',
+              layout: 'vertical',
+              label: 'paypal'
+            },
+            createSubscription: function(data, actions) {
+              return actions.subscription.create({
+                plan_id: 'P-9LM8931226333090KMTJYCUI'
+              });
+            },
+            onApprove: function(data, actions) {
+              alert(data.subscriptionID);
+            }
+          }).render('#paypal-button-container-P-9LM8931226333090KMTJYCUI');
+        </script>
+      </div>
     </div>
   </div>
 
