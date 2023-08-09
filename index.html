@@ -4,104 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subscription Plans</title>
-  <link rel="icon" href="https://cdn.discordapp.com/attachments/1107492231960600587/1116327048013680742/Netphoria_NPH_logo_DSG_style_block.png" type="image/x-icon">
-  <link rel="stylesheet" href="styles.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap');
-
-    html,
     body {
       margin: 0;
       padding: 0;
-      height: 100%;
-    }
-
-    body {
-      font-family: 'Shippori Antique', Arial, sans-serif;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .background-image {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background-image: url("https://64.media.tumblr.com/387d4c58d1fa5b6d3eb40c03fd50bd74/b7ffbe21e06f8b12-01/s500x750/6205a776f74b0271bf2bd836546ba78b9012242c.gif");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: #fff;
-    }
-
-    .overlay h1 {
-      font-size: 25px;
-      font-weight: bold;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
     }
 
     header {
       background-color: #333;
+      color: #fff;
+      text-align: center;
       padding: 10px;
-      text-align: left;
-      display: flex;
-      align-items: center;
     }
 
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
-    nav li {
-      display: inline-block;
-      margin-right: 10px;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-    }
-
-    .social-media {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-    }
-
-    .social-media a {
-      display: inline-block;
-      margin-right: 10px;
-      color: #fff;
-      font-size: 20px;
-    }
-
-    section.plans {
+    .plans {
       display: flex;
       justify-content: center;
       align-items: stretch;
-      padding: 40px;
+      margin-top: 20px;
     }
 
     .plan {
       background-color: #fff;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
       padding: 20px;
       margin: 0 15px;
       text-align: center;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
 
     .plan h2 {
@@ -110,8 +49,9 @@
 
     .plan .price {
       font-weight: bold;
-      font-size: 20px;
+      font-size: 24px;
       margin-bottom: 20px;
+      color: #f39c12;
     }
 
     .plan ul {
@@ -121,21 +61,22 @@
     }
 
     .plan ul li {
-      margin: 8px 0;
+      margin: 10px 0;
     }
 
     .btn {
-      background-color: #333;
+      background-color: #f39c12;
       color: #fff;
       border: none;
       padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      text-decoration: none;
     }
 
     .btn:hover {
-      background-color: #555;
+      background-color: #e67e22;
     }
 
     footer {
@@ -147,61 +88,25 @@
   </style>
 </head>
 <body>
-  <div class="background-image"></div>
-  <div class="overlay">
-    <h1>Choose Your Subscription Plan</h1>
-  </div>
   <header>
-    <nav>
-      <ul>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">Whoami</a>
-        </li>
-        <li>
-          <a href="#">Services</a>
-        </li>
-        <li>
-          <a href="#">Work</a>
-        </li>
-        <li>
-          <a href="mailto:lovmmusic@gmail.com">Contact</a>
-        </li>
-      </ul>
-    </nav>
+    <h1>Choose Your Subscription Plan</h1>
   </header>
   
-  <section class="plans">
-    <div class="plan">
-      <h2>Basic Plan</h2>
-      <p class="price">$9.99/month</p>
-      <ul>
-        <li>Access to basic features</li>
-        <li>24/7 customer support</li>
-        <li>Limited data storage</li>
-      </ul>
-      <a mp-mode="dftl" href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808489d9a6da0189d9a97f760000" name="MP-payButton" class='blue-ar-l-rn-none btn'>Suscribirme</a>
-      <script type="text/javascript">
-        (function() {
-          function $MPC_load() {
-            window.$MPC_loaded !== true && (function() {
-              var s = document.createElement("script");
-              s.type = "text/javascript";
-              s.async = true;
-              s.src = document.location.protocol + "//secure.mlstatic.com/mptools/render.js";
-              var x = document.getElementsByTagName('script')[0];
-              x.parentNode.insertBefore(s, x);
-              window.$MPC_loaded = true;
-            })();
-          }
-          window.$MPC_loaded !== true ? (window.attachEvent ? window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;
-        })();
-      </script>
-    </div>
-    <!-- ... Other plan sections ... -->
-  </section>
+  <div class="container">
+    <section class="plans">
+      <div class="plan">
+        <h2>Basic Plan</h2>
+        <p class="price">$9.99/month</p>
+        <ul>
+          <li>Access to basic features</li>
+          <li>24/7 customer support</li>
+          <li>Limited data storage</li>
+        </ul>
+        <a mp-mode="dftl" href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808489d9a6da0189d9a97f760000" name="MP-payButton" class='btn'>Suscribirme</a>
+      </div>
+      <!-- ... Other plan sections ... -->
+    </section>
+  </div>
 
   <footer>
     <p>&copy; 2023 Your Company Name. All rights reserved.</p>
