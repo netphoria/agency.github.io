@@ -19,7 +19,7 @@
     }
 
     /* Additional styles for the Shopify Buy Button container */
-    #product-component-1691711048872 {
+    .product-container {
       margin-top: 20px;
     }
   </style>
@@ -30,7 +30,7 @@
     <p>Select a product and click the "Buy Now" button.</p>
 
     <!-- Add the Shopify Buy Button container -->
-    <div id="product-component-1691711048872"></div>
+    <div class="product-container" id="product-component-1691711531503"></div>
   </div>
 
   <!-- Add the Shopify Buy Button script -->
@@ -62,7 +62,7 @@
         ShopifyBuy.UI.onReady(client).then(function (ui) {
           ui.createComponent('product', {
             id: '8540827976002',
-            node: document.getElementById('product-component-1691711048872'),
+            node: document.getElementById('product-component-1691711531503'),
             /* Additional options can be configured here */
           });
         });
