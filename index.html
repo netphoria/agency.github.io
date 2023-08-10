@@ -1,34 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Your existing meta tags and title -->
-
-  <!-- Your existing styles -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Shopify Buy Button Example</title>
   <style>
-    /* Your existing CSS styles */
+    /* Your custom styles can be added here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
     /* Additional styles for the Shopify Buy Button container */
     #product-component-1691711048872 {
-      margin-top: 20px; /* Adjust as needed */
+      margin-top: 20px;
     }
   </style>
-
-  <!-- Your existing head content -->
 </head>
 <body>
   <div class="container">
-    <!-- Your existing content -->
+    <h1>Buy Now</h1>
+    <p>Select a product and click the "Buy Now" button.</p>
 
     <!-- Add the Shopify Buy Button container -->
-    <div id='product-component-1691711048872'></div>
+    <div id="product-component-1691711048872"></div>
   </div>
-
-  <!-- Your existing scripts -->
 
   <!-- Add the Shopify Buy Button script -->
   <script type="text/javascript">
-    /* Shopify Buy Button script */
-    // ... (The rest of your Shopify Buy Button script)
+    /*<![CDATA[*/
+    (function () {
+      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+      if (window.ShopifyBuy) {
+        if (window.ShopifyBuy.UI) {
+          ShopifyBuyInit();
+        } else {
+          loadScript();
+        }
+      } else {
+        loadScript();
+      }
+      function loadScript() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = scriptURL;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+        script.onload = ShopifyBuyInit;
+      }
+      function ShopifyBuyInit() {
+        var client = ShopifyBuy.buildClient({
+          domain: 'aa5101-2.myshopify.com',
+          storefrontAccessToken: 'b388d6d9eac62c394c83d1e64a69858d',
+        });
+        ShopifyBuy.UI.onReady(client).then(function (ui) {
+          ui.createComponent('product', {
+            id: '8540827976002',
+            node: document.getElementById('product-component-1691711048872'),
+            /* Additional options can be configured here */
+          });
+        });
+      }
+    })();
+    /*]]>*/
   </script>
 </body>
 </html>
