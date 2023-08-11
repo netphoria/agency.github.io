@@ -1,74 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Shopify Buy Button Example</title>
+  <title>Simple Sales Page</title>
   <style>
-    /* Your custom styles can be added here */
     body {
       font-family: Arial, sans-serif;
+      text-align: center;
       margin: 0;
       padding: 0;
     }
-
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
       padding: 20px;
     }
-
-    /* Additional styles for the Shopify Buy Button container */
-    .product-container {
+    h1 {
+      margin-top: 20px;
+    }
+    p {
+      margin-top: 10px;
+    }
+    .button-container {
       margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Buy Now</h1>
-    <p>Select a product and click the "Buy Now" button.</p>
-
-    <!-- Add the Shopify Buy Button container -->
-    <div class="product-container" id="product-component-1691711531503"></div>
+    <h1>Welcome to Our Product Page</h1>
+    <p>Click the button below to purchase our product:</p>
+    
+    <div class="button-container">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick" />
+        <input type="hidden" name="hosted_button_id" value="WY5H9JEH9DAWQ" />
+        <input type="hidden" name="currency_code" value="USD" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+      </form>
+    </div>
   </div>
-
-  <!-- Add the Shopify Buy Button script -->
-  <script type="text/javascript">
-    /*<![CDATA[*/
-    (function () {
-      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-      if (window.ShopifyBuy) {
-        if (window.ShopifyBuy.UI) {
-          ShopifyBuyInit();
-        } else {
-          loadScript();
-        }
-      } else {
-        loadScript();
-      }
-      function loadScript() {
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = scriptURL;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-        script.onload = ShopifyBuyInit;
-      }
-      function ShopifyBuyInit() {
-        var client = ShopifyBuy.buildClient({
-          domain: 'aa5101-2.myshopify.com',
-          storefrontAccessToken: 'b388d6d9eac62c394c83d1e64a69858d',
-        });
-        ShopifyBuy.UI.onReady(client).then(function (ui) {
-          ui.createComponent('product', {
-            id: '8540827976002',
-            node: document.getElementById('product-component-1691711531503'),
-            /* Additional options can be configured here */
-          });
-        });
-      }
-    })();
-    /*]]>*/
-  </script>
 </body>
 </html>
